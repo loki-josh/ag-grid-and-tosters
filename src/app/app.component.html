@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <app-child [jsonDataFromAppComp]="jsonData" (Eventmsg)="Rfunc($event)"></app-child>
+    <app-home></app-home>
+    <router-outlet></router-outlet>
+
+    <h1>displaying toster functionality buttons</h1><br>
+
+    <button (click)="showToasterSuccess()" class="btn btn-success">
+        Success Toaster
+    </button>&nbsp;
+
+    <button (click)="showToasterError()" class="btn btn-danger">
+        Error Toaster
+    </button>&nbsp;
+
+    <button (click)="showToasterInfo()" class="btn btn-info">
+        Info Toaster
+    </button>&nbsp;
+
+    <button (click)="showToasterWarning()" class="btn btn-warning">
+        Warning Toaster
+    </button>&nbsp;
+
+
+</body>
+
+</html>

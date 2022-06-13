@@ -1,0 +1,49 @@
+
+
+
+
+
+<button (click)="fucn()">click me to show</button>
+<button (click)="fucn2()">click me to hide </button>
+
+<div style="border: solid black 2px;">
+<h2 *ngIf="this.value" style="text-align: center; color: green;">This data is from App component by input decorator</h2>
+<h2 *ngIf="!this.value" style="text-align: center; color: red;">The table here is hided by the user</h2>
+
+
+<div  *ngIf="this.value">
+  <table class="container">
+    <thead>
+      <tr>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>ID</th>
+        <th>EMAIL</th>
+        <th>AVATAR</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr  *ngFor="let item of jsonDataFromAppComp">
+        <td>{{item.first_name}}</td>
+        <td>{{item.last_name}}</td>
+        <td>{{item.id}}</td>
+        <td>{{item.email}}</td>
+        <td> <img style="height: 35px;" src={{item.avatar}}></td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

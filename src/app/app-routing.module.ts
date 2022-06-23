@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ChildActivationEnd, RouterModule, Routes } from '@angular/router';
+import { ChildComponent } from './child/child.component';
+import { FooterComponent } from './footer/footer.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:"footer", component:FooterComponent},
+  {path:"child", component:ChildComponent},
+  
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

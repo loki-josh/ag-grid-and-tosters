@@ -9,13 +9,17 @@ import { AgGridModule } from 'ag-grid-angular';
 import { ChildComponent } from './child/child.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthInterceptor } from './auth.interceptor';
+import { FooterComponent } from './footer/footer.component';
+// import { MyHttpInterceptor } from './http.interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ChildComponent
+    ChildComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +29,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     
+    
   ],
   providers: [
-  
+    { provide: HTTP_INTERCEPTORS,useClass: AuthInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+

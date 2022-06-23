@@ -10,7 +10,8 @@ export class ApiService implements OnInit {
   rowData: any;
 
   constructor(private http : HttpClient) {
-    this.url = "https://reqres.in/api/users?page=2"
+    // this.url = "https://reqres.in/api/users?page=2"
+    this.url = "https://fakestoreapi.com/products1/"
    }
    
    ngOnInit(): void {
